@@ -27,6 +27,23 @@ class _ExpenseState extends State<Expenses> {
     )
   ];
 
+  void _openAddExpenseModal() {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        builder: (ctx) {
+          return NewExpense(
+            onAddExpense: _addExpense,
+          );
+        });
+  }
+
+  void _addExpense(Expense expense) {
+    setState(() {
+      _registeredExpense.add(expense);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
