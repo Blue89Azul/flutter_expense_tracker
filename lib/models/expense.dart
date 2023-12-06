@@ -2,6 +2,9 @@ import 'package:uuid/uuid.dart';
 
 enum Category { food, travel, leisure, work }
 
+
+final formatter = DateFormat.yMd();
+
 class Expense {
   Expense({
     required this.title,
